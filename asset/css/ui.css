@@ -1,0 +1,483 @@
+@charset "UTF-8";
+
+/* common ------------------------------------------------------------*/
+:root {
+    /* color */
+    --color_white: #fff;
+    --color_black: #555;
+    --color_black02: #B1AEAE;
+    --color_black03: #f5f5f5;
+    --color_primary: #B8D0DE;
+    --color_primary02: #F0F5F9;
+    --color_point: #2D78A5;
+
+    /* shadow */
+    --shadow_4_15: 2px 2px 4px rgba(0,0,0,.15);
+    --shadow_10_1: 5px 5px 10px rgba(0,0,0,.1);
+    --shadow_30_15: 30px 2px 30px rgba(0,0,0,.15);
+
+    /* font */
+    --font_jeju: 'JejuMyeongjo', serif;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: "Roboto", "Noto Sans KR", sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--color_black);
+}
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+section {
+    max-width: 1200px;
+    /* margin: 100px auto; */
+    margin: 0 auto;
+}
+h2,
+h3 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--color_black02);
+    text-shadow: var(--shadow_4_15);
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
+a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+button {
+    cursor: pointer;
+}
+/* keyframes */
+@keyframes move_y_30 {
+    70% {
+        transform: translateY(-30%);
+    }
+}
+@keyframes move_bg_linear {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+/* button,icon */
+.i_download {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: sub;
+    background: url(/asset/img/i_download.png)center / contain no-repeat;
+}
+.i_mail {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: sub;
+    background: url(/asset/img/i_mail_b.png)center / contain no-repeat;
+}
+
+/* ui ------------------------------------------------------------*/
+/* main_top */
+aside {
+    width: 100%;
+    height: 100vh;
+    /* background-image: linear-gradient(90deg , white, #a7c5d6); */
+    background: linear-gradient(90deg, #fff, var(--color_primary) , #fff, var(--color_primary));
+	background-size: 400% 400%;
+	/* animation: gradient 15s ease infinite; */
+	/* height: 100vh; */
+
+    border: 1vh solid var(--color_white);
+    box-sizing: border-box;
+    position: relative;
+    animation: move_bg_linear 10s ease infinite;
+}
+aside::before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    background: var(--color_white);
+    position: absolute;
+    right: 370px;
+}
+.main_txt {
+    position: absolute;
+    right: 237px;
+    bottom: 269px;
+    display: flex;
+    text-shadow: var(--shadow_4_15);
+}
+.main_txt > p {
+    font-size: 26px;
+}
+.main_txt > div {
+    font-size: 20px;
+}
+.main_txt > div p:last-child {
+    font-size: 12px;
+}
+.main_txt > p::after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 20px;
+    background: var(--color_black);
+    margin: 0 30px;
+}
+.main_logo {
+    width: 122px;
+    height: 31px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.i_arrow_bottom {
+    width: 46px;
+    height: 28px;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+}
+.i_arrow_bottom {
+    width: 46px;
+    height: 28px;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+}
+.i_arrow_bottom span {
+    color: var(--color_black);
+    display: block;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.i_arrow_bottom img {
+    animation: move_y_30 .8s infinite ease-in;
+}
+
+
+/* header */
+header {
+    width: 100%;
+    padding: 0 40px;
+    background-image: linear-gradient(90deg , white, #a7c5d6);
+    border: 1vh solid var(--color_white);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header_logo {
+    width: 100px;
+    height: 24px;
+    background: url(/asset/img/snrLogo.png)center / contain no-repeat;
+}
+.header_gnb {
+    display: flex;
+    font-size: 1.8rem;
+}
+.header_gnb li {
+    /* padding: 15px 25px 13px; */
+    position: relative;
+}
+.header_gnb li a {
+    padding: 15px 25px 13px;
+}
+.header_gnb li.active a::after,
+.header_gnb li:hover a::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--color_black);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    box-shadow: var(--shadow_4_15);
+}
+.btn_mail_y {
+    width: 30px;
+    height: 25px;
+    background: url(/asset/img/i_mail_y.png)center / contain no-repeat;
+}
+/* footer */
+footer {
+    font-size: 1.4rem;
+    color: var(--color_black02);
+    border-top: 1px solid var(--color_primary);
+    padding: 27px 50px;
+    text-align: center;
+}
+/* about */
+.about_txt {
+    padding: 200px 0;
+    /* margin-bottom: 200px; */
+}
+.about_txt p {
+    font-size: 2.4rem;
+    font-family: var(--font_jeju);
+    text-shadow: var(--shadow_4_15);
+    margin-left: 45px;
+    margin-bottom: 20px;
+    /* width: calc(100% - 45px); */
+    position: relative;
+    border-bottom: 1px solid var(--color_black02);
+    display: inline-block;
+}
+.about_txt p::before {
+    content: '';
+    display: inline-block;
+    width: 35px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -45px;
+    margin-right: 10px;
+
+    background: url(/asset/img/i_check.png)center / contain no-repeat;
+}
+
+/* skill & tool */
+.skill_wrap {
+    padding: 0 0 100px;
+    background: var(--color_primary02);
+    box-shadow: var(--shadow_30_15);
+}
+.skill_wrap section {
+    display: flex;
+}
+.skill_txt {
+    width: 190px;
+    flex: none;
+    position: relative;
+    padding-top: 100px;
+    padding-right: 50px;
+}
+.skill_txt::after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    background: var(--color_primary);
+    height: 379px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.skill_txt p {
+    margin-top: 58px;
+    font-size: 1.8rem;
+    font-family: var(--font_jeju);
+    text-shadow: var(--shadow_4_15);
+}
+.skill_list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 978px;
+    margin-top: 128px;
+}
+.skill_list li {
+    width: 25%;
+    height: 114px;
+    margin-top: 50px;
+}
+.skill_list span {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: keep-all;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.ico_photoshop {
+    width: 81px;
+    height: 79px;
+    background-image: url("/asset/img/logo_ps.png");
+}
+.ico_illustrator {
+    width: 81px;
+    height: 79px;
+    background-image: url("/asset/img/logo_ai.png");
+}
+.ico_figma {
+    width: 164px;
+    height: 55px;
+    background-image: url("/asset/img/logo_figma.png");
+}
+.ico_zeplin {
+    background-image: url("/asset/img/logo_zeplin.png");
+}
+.ico_html {
+    background-image: url("/asset/img/logo_html.png");
+}
+.ico_css {
+    background-image: url("/asset/img/logo_css.png");
+}
+.ico_jquery {
+    background-image: url("/asset/img/logo_jquery.png");
+}
+.ico_javascript {
+    background-image: url("/asset/img/logo_js.png");
+}
+.ico_git {
+    background-image: url("/asset/img/logo_git.png");
+}
+.ico_github {
+    background-image: url("/asset/img/logo_github.png");
+}
+.ico_jira {
+    background-image: url("/asset/img/logo_jira.png");
+}
+.ico_redmine {
+    background-image: url("/asset/img/logo_redmin.png");
+}
+
+/* work */
+.work {
+    padding: 100px 0;
+}
+.work h2 {
+    margin-bottom: 32px;
+}
+.work_list {
+    display: flex;
+}
+.work_item {
+    width: calc((100% - 27px)/2);
+    margin-right: 27px;
+}
+.work_item:nth-of-type(2n) {
+    margin-right: 0;
+}
+.work_item .thumb {
+    width: 100%;
+    height: 14.5833vw;
+    background: var(--color_white);
+    border: 1px solid var(--color_black03);
+    border-radius: 5px;
+    box-shadow: var(--shadow_10_1);
+}
+.work_item h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color_black);
+    text-shadow: none;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.work_item p {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.lbl_keyword {
+    color: var(--color_point);
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+/* contact */
+.link_resume {
+    /* background: var(--color_point); */
+    background-image: linear-gradient(90deg , rgba(184, 208, 222, .5) , #8CB3CA 50%);
+    color: var(--color_white);
+    font-size: 2.4rem;
+    font-family: var(--font_jeju);
+    font-weight: 300;
+    box-shadow: var(--shadow_30_15);
+    text-align: right;
+    padding: 24px 0 30px;
+}
+.link_resume a {
+    /* padding: 24px 0 30px; */
+    /* text-decoration: underline; */
+    border-bottom: 1px solid var(--color_primary02);
+    position: relative;
+    display: inline;
+}
+.link_resume a::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    left: -35px;
+    top: -2px;
+    background: url(/asset/img/i_emoji.png)center / contain no-repeat;
+    margin-right: 7px;
+}
+.link_resume a span {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.contact_txt {
+    padding: 100px;
+    /* display: flex; */
+}
+.contact_txt h2 {
+    /* width: 400px; */
+    /* text-align: left; */
+    margin-left: 100px;
+    font-size: 6.7rem;
+    font-weight: 700;
+    opacity: 0.15;
+    letter-spacing: -0.05em;
+}
+.contact_list {
+    overflow: hidden;
+    padding-top: 50px;
+    margin-top: -75px;
+}
+.contact_list ul {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    box-shadow: 30px 10px 30px rgba(0, 0, 0, .1);
+}
+.contact_list li {
+    font-family: var(--font_jeju);
+    font-size: 2rem;
+    margin: 0 50px 0 auto;
+    width: calc(100% - 350px);
+    border-bottom: 1px solid var(--color_primary02);
+    padding-bottom: 10px;
+    position: relative;
+}
+.contact_list li + li {
+    margin-top: 22px;
+}
+.contact_list .i_download,
+.contact_list .i_mail {
+    position: absolute;
+    left: 300px;
+    bottom: 12px;
+}
+

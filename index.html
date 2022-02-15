@@ -7,14 +7,124 @@
         <meta name="Description" content="퍼블리셔 신나리 포트폴리오 페이지입니다."/>
         <meta name="Author" content="신나리"/>
         <meta name="Keywords" content="퍼블리셔 UI/UX 반응형 모바일 웹앱 ui디자인 경력퍼블리셔 포트폴리오"/>
-        <link rel="shortcut icon" href="snrLogo.ico"/>
+        <link rel="shortcut icon" href="/asset/img/snrLogo.ico"/>
         <title>신나리 portfolio</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+        <link rel="stylesheet" href="asset/css/reset.css">
+        <link rel="stylesheet" href="asset/css/fontZip.css">
+        <link rel="stylesheet" href="asset/css/ui.css">
+        <script src="asset/js/jquery-3.3.1.min.js"></script>
+        <script src="asset/js/ui.js"></script>
     </head>
     <body>
-
+      <div class='wrap'>
+        <!-- 메인상단 -->
+        <aside>
+          <h1 class="blind">Shin Naree portfolio page</h1>
+          <div class="main_txt">
+            <p>Portfolio</p>
+            <div>
+              <p>Shin Naree</p>
+              <p>UI/UX/Web design/<br>Web Publishing</p>
+            </div>
+          </div>
+          <div class='main_logo'>
+            <img src='/asset/img/snrLogo.png' alt='logo'>
+          </div>
+          <div class='i_arrow_bottom'>
+            <img src='/asset/img/i_arrow_bottom.png' alt='scroll to bottom'>
+          </div>
+        </aside>
+        <!-- 헤더 -->
+        <header>
+          <h2 class="header_logo"><span class="blind">logo</span></h2>
+          <ul class="header_gnb">
+            <li><a>ABOUT</a></li>
+            <li><a>WORK</a></li>
+            <li><a>CONTACT</a></li>
+          </ul>
+          <button class="btn_mail_y"><span class="blind">메일보내기</span></button>
+        </header>
+        <main>
+          <div id='about'>
+            <h2 class="blind">About</h2>
+            <section class="about_txt">
+              <p>안녕하세요 웹퍼블리셔 경력 3년차 신나리입니다.</p>
+              <p>퀄리티는 작은 부분도 꼼꼼히 챙길 줄 아는 섬세함에서 나온다고 생각합니다.</p>
+              <p>어떻게 하면 더 좋은 마크업과 효율적인 방법으로 구현할 수 있는지 고민합니다.</p>
+              <p>항상 성실함과 책임감으로 프로젝트를 진행하고 있습니다.</p>
+            </section>
+            <div class="skill_wrap">
+              <section>
+                <div class="skill_txt">
+                  <h3>SKILL & TOOL</h3>
+                  <p>현재 제가 사용할 수 있는 기술,툴 입니다. 더 나은 스킬과 협업능력 향상을 위해 노력하고 있습니다.</p>
+                </div>
+                <ul class="skill_list">
+                  <li><span class="ico_photoshop">photoshop</span></li>
+                  <li><span class="ico_illustrator">illustrator</span></li>
+                  <li><span class="ico_figma">figma</span></li>
+                  <li><span class="ico_zeplin">zeplin</span></li>
+                  <li><span class="ico_html">html5</span></li>
+                  <li><span class="ico_css">css3</span></li>
+                  <li><span class="ico_jquery">jquery</span></li>
+                  <li><span class="ico_javascript">javascript</span></li>
+                  <li><span class="ico_git">git</span></li>
+                  <li><span class="ico_github">github</span></li>
+                  <li><span class="ico_jira">jira</span></li>
+                  <li><span class="ico_redmine">redmine</span></li>
+                </ul>
+              </section>
+            </div>
+          </div>
+          <div id='work' class="work">
+            <section>
+              <h2>Work</h2>
+              <ul class="work_list">
+                <li class="work_item">
+                  <div class='thumb'>
+                    <img src='/asset/img/logo_github.png' alt=''>
+                  </div>
+                  <h3>용된다오피셜 사이트</h3>
+                  <p>
+                    <span class='lbl_keyword'>#반응형</span>
+                    <span class='lbl_keyword'>#모바일</span>
+                    <span class='lbl_keyword'>#쇼핑몰</span>
+                    <span class='lbl_keyword'>#웹사이트</span>
+                  </p>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <div id='contact'>
+            <div class="link_resume">
+              <section>
+                <a>이력서보러가기<span>↗</span></a>
+              </section>
+            </div>
+            <section class="contact_txt">
+              <h2>CONTACT</h2>
+              <div class="contact_list">
+                <ul>
+                  <li>
+                    <a>이력서 다운로드</a>
+                    <span class="i_download"></span>
+                  </li>
+                  <li>
+                    <a>nr.shin000@gmail.com</a>
+                    <span class="i_mail"></span>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </main>
+        <footer>
+          <p>Copyright(c)2022 by Shin Na-ree. All pictures cannot be copied without permission.</p>
+        </footer>
+      </div>
     </body>
 </html>
