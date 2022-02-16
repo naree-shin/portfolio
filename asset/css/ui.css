@@ -60,6 +60,12 @@ a {
     height: 100%;
     cursor: pointer;
 }
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+}
 button {
     cursor: pointer;
 }
@@ -183,14 +189,19 @@ aside::before {
 
 /* header */
 header {
-    width: 100%;
+    width: calc(100% - 2vh);
     padding: 0 40px;
-    background-image: linear-gradient(90deg , white, #a7c5d6);
-    border: 1vh solid var(--color_white);
+    background-image: linear-gradient(90deg , white, rgba(183,204,222,.9));
+    /* border: 1vh solid transparent; */
+    margin: 1vh;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 1vh;
+    z-index: 10;
+    /* box-shadow: var(--shadow_4_15); */
 }
 .header_logo {
     width: 100px;
@@ -204,12 +215,14 @@ header {
 .header_gnb li {
     /* padding: 15px 25px 13px; */
     position: relative;
-}
-.header_gnb li a {
     padding: 15px 25px 13px;
+    box-sizing: border-box;
+    cursor: pointer;
 }
-.header_gnb li.active a::after,
-.header_gnb li:hover a::after {
+/* .header_gnb li a {
+} */
+.header_gnb li.active::after,
+.header_gnb li:hover::after {
     content: '';
     display: block;
     width: 20px;
@@ -222,8 +235,8 @@ header {
     box-shadow: var(--shadow_4_15);
 }
 .btn_mail_y {
-    width: 30px;
-    height: 25px;
+    width: 39px;
+    height: 31px;
     background: url(/asset/img/i_mail_y.png)center / contain no-repeat;
 }
 /* footer */
@@ -236,7 +249,7 @@ footer {
 }
 /* about */
 .about_txt {
-    padding: 200px 0;
+    padding: 300px 0 200px;
     /* margin-bottom: 200px; */
 }
 .about_txt p {
@@ -247,8 +260,14 @@ footer {
     margin-bottom: 20px;
     /* width: calc(100% - 45px); */
     position: relative;
-    border-bottom: 1px solid var(--color_black02);
+    border-bottom: none;
     display: inline-block;
+    transition: all 5s ease;
+}
+.about_txt p.active:hover {
+    border-bottom: 1px solid var(--color_black02);
+    transition: all 5s ease;
+    background: pink;
 }
 .about_txt p::before {
     content: '';
@@ -260,7 +279,14 @@ footer {
     left: -45px;
     margin-right: 10px;
 
+    background: unset;
+    transition: all 5s ease;
     background: url(/asset/img/i_check.png)center / contain no-repeat;
+    opacity: 0;
+}
+.about_txt p.active::before {
+    transition: all 5s ease;
+    opacity: 1;
 }
 
 /* skill & tool */
@@ -423,15 +449,16 @@ footer {
     border-bottom: 1px solid var(--color_primary02);
     position: relative;
     display: inline;
+    text-shadow: var(--shadow_4_15);
 }
 .link_resume a::before {
     content: '';
     display: inline-block;
-    width: 28px;
-    height: 28px;
+    width: 38px;
+    height: 38px;
     position: absolute;
-    left: -35px;
-    top: -2px;
+    left: -40px;
+    top: -6px;
     background: url(/asset/img/i_emoji.png)center / contain no-repeat;
     margin-right: 7px;
 }
@@ -440,7 +467,7 @@ footer {
 }
 
 .contact_txt {
-    padding: 100px;
+    padding: 200px 100px;
     /* display: flex; */
 }
 .contact_txt h2 {
